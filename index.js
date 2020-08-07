@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express()
-const PORT = process.env.port || 3000;
+const PORT = process.env.PORT || 3000;
 let http = require('http').Server(app)
 
 
-app.use(express.static('public'))
+app.use(express.static(__dirname + '/public'))
 
 let io = require("socket.io")(http)
 io.on('connection',(socket)=>{
